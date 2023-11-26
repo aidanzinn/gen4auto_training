@@ -4,6 +4,8 @@ metadata
 lightning_logs
 .pdm.toml
 
+Gen4Hist/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

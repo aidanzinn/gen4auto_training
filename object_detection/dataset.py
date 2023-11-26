@@ -69,11 +69,16 @@ class Gen4DetectionDataset(pl.LightningDataModule):
             padding=True,
             preprocess_kwargs={"max_incr_per_pixel": max_incr_per_pixel},
         )
+        print(f"Initialized batch size: {self.kw_args['batch_size']}")
+        
+
 
     def setup(self, stage=None):
-        self.files_train = glob.glob(str(self.dataset_path / "train" / "*.h5"))
-        self.files_val = glob.glob(str(self.dataset_path / "val" / "*.h5"))
-        self.files_test = glob.glob(str(self.dataset_path / "test" / "*.h5"))
+        self.files_train = glob.glob(str(self.dataset_path / "train_small" / "*.h5"))
+        self.files_val = glob.glob(str(self.dataset_path / "val_supersmall" / "*.h5"))
+        self.files_test = glob.glob(str(self.dataset_path / "test_supersmall" / "*.h5"))
+        # print("Testing hello")
+        # print(self.files_train)
 
     def train_dataloader(self):
         return SequentialDataLoader(self.files_train, **self.kw_args)

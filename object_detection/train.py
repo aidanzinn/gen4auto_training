@@ -1,6 +1,7 @@
 import argparse
 
 import pytorch_lightning as pl
+import torch
 from dataset import Gen4DetectionDataset
 from model import LightningDetectionModel
 # a;skldfjal;skdfj;laksdfj
@@ -60,6 +61,5 @@ if __name__ == "__main__":
         callbacks=[checkpoint_callback],
         logger=logger,
     )
-
     trainer.fit(model, dataset)
     trainer.test(model, dataset)
