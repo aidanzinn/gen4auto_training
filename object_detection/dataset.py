@@ -74,9 +74,9 @@ class Gen4DetectionDataset(pl.LightningDataModule):
 
 
     def setup(self, stage=None):
-        self.files_train = glob.glob(str(self.dataset_path / "train_small" / "*.h5"))
-        self.files_val = glob.glob(str(self.dataset_path / "val_supersmall" / "*.h5"))
-        self.files_test = glob.glob(str(self.dataset_path / "test_supersmall" / "*.h5"))
+        self.files_train = glob.glob(str(self.dataset_path / "train" / "*.h5"))
+        self.files_val = glob.glob(str(self.dataset_path / "val" / "*.h5"))
+        self.files_test = glob.glob(str(self.dataset_path / "test" / "*.h5"))
         # print("Testing hello")
         # print(self.files_train)
 
