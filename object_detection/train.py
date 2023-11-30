@@ -4,7 +4,6 @@ import pytorch_lightning as pl
 import torch
 from dataset import Gen4DetectionDataset
 from model import LightningDetectionModel
-# a;skldfjal;skdfj;laksdfj
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -34,7 +33,7 @@ if __name__ == "__main__":
 
     model = LightningDetectionModel(
         batch_size=args.batch_size,
-        feature_extractor="Vanilla",
+        feature_extractor="VanillaSpiking",
         in_channels=dataset.channels,
         feature_channels_out=256,
         feature_base=16,
